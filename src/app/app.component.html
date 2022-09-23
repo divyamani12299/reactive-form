@@ -1,0 +1,112 @@
+<form [formGroup]="userForm">
+  <h1>Register Form</h1>
+  <label>
+    First Name: <br />
+    <input type="text" formControlName="firstName" /><br />
+    <span
+      class="error"
+      *ngIf="userForm.get('firstName')?.invalid &&(userForm.get('firstName')?.touched || userForm.get('firstName')?.dirty)"
+      >First Name is invalid</span
+    > 
+    </label
+  ><br /><br />
+
+  <label>
+    Last Name: <br />
+    <input type="text" formControlName="lastName" /><br />
+    <span></span>
+      class="error"
+      *ngIf="
+      userForm.get('lastName')?.invalid &&
+        (userForm.get('lastName')?.touched || userForm.get('lastName')?.dirty)
+      "
+      >Last Name is invalid</span
+    > </label
+  ><br /><br />
+  <label>
+    Age: <br />
+    <input type="text" formControlName="age" /><br />
+    <span
+      class="error"
+      *ngIf="
+      userForm.get('age')?.invalid &&
+        (userForm.get('age')?.touched || userForm.get('age')?.dirty)
+      "
+      >Age is invalid</span
+    > </label
+  ><br /><br />
+  <label>
+    phone: <br />
+    <input type="text" formControlName="phone" /><br />
+    <span
+      class="error"
+      *ngIf="
+      userForm.get('phone')?.invalid &&
+        (userForm.get('phone')?.touched || userForm.get('phone')?.dirty)
+      "
+      >phone is invalid</span
+    > </label
+  ><br /><br />
+
+  
+  
+  <label>
+    Email: <br />
+    <input type="text" formControlName="email" /><br />
+    <span
+      class="error"
+      *ngIf="
+      userForm.get('email')?.invalid &&
+        (userForm.get('email')?.touched || userForm.get('email')?.dirty)
+      "
+      >Email is invalid</span
+    > </label
+  ><br /><br />
+  <label>
+    password: <br />
+    <input type="text" formControlName="password" /><br />
+    <span
+      class="error"
+      *ngIf="
+      userForm.get('password')?.invalid &&
+        (userForm.get('password')?.touched || userForm.get('password')?.dirty)
+      "
+      >Use A-Z ,a-z,@ % #, 0-9,8 Char</span
+    > </label
+  ><br /><br />
+  <button (click)="onLogin()" class="btn btn-primary">Login</button>
+  <button (click)="update()" class="btn btn-primary">update</button>
+</form>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>phone</th>
+    <th> Email</th>
+    <th>password:</th>
+  </tr>
+  <tr *ngFor="let data of studentdetails">
+    <td>{{data.firstName}}</td>
+    <td>{{data.lastName}}</td>
+    <td>{{data.age}}</td>
+    <td>{{data.phone}}</td>
+    <td>{{data.email}}</td>
+    <td>{{data.password}}</td>
+    <td><button (click)="edit(data.firstName)">edit</button></td>
+    <td><button (click)="delete(data.firstName)">delete</button></td>
+
+  </tr>
+</table>
+    
+
+<!-- 
+  <button [disabled]="!userForm.valid">Submit</button>
+</form>
+<div *ngFor="let data of userData"></div>
+{{userData.firstName}} 
+{{userData.lastName}} -->
+
+<!-- {{userData.firstName}} -->
+`
